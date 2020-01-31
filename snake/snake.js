@@ -19,7 +19,7 @@ const CENTRE_TILE = [Math.floor(TILES_PER_ROW / 2),
     Math.floor(TILES_PER_ROW / 2)];
 
 const SNAKE_COLOUR = "black";
-const START_SEGMENT_COUNT = 12;
+const START_SEGMENT_COUNT = 3;
 
 const FOOD_COLOUR = "red";
 
