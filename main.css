@@ -30,6 +30,8 @@ a * {
 }
 
 a img {
+    width: 12rem;
+    height: 9rem;
     border-radius: 1rem;
     transition: transform 200ms ease-out, border-radius 200ms ease-out;
 }
