@@ -193,25 +193,4 @@ function main() {
     render();
 }
 
-/* https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser */
-function isMobile() {
-    let match = window.matchMedia || window.msMatchMedia;
-    if(match) {
-        let mq = match("(pointer:coarse)");
-        return mq.matches;
-    }
-    return false;
-}
-
-// Checks if the player is using a mobile device
-if(!isMobile()) {
-    setInterval(main, 1000 / FPS);
-} else {
-    // If they are, the canvas is removed and replaced with an
-    // incompatibility message
-    canvas.remove();
-    let noMobileCompatMsg = document.createElement("p");
-    noMobileCompatMsg.innerHTML = "This game does not support " +
-        "mobile devices.";
-    document.body.appendChild(noMobileCompatMsg);
-}
+setInterval(main, 1000 / FPS);

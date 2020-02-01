@@ -1,5 +1,5 @@
 /** @type {HTMLCanvasElement} */
-let canvas = document.getElementById("canvas");
+let canvas = document.getElementsByTagName("canvas")[0];
 /** @type {CanvasRenderingContext2D} */
 let context = canvas.getContext("2d");
 context.font = "bold 40px arial";
@@ -203,22 +203,4 @@ function main() {
     render();
 }
 
-/* https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser */
-function isMobile() {
-    let match = window.matchMedia || window.msMatchMedia;
-    if(match) {
-        let mq = match("(pointer:coarse)");
-        return mq.matches;
-    }
-    return false;
-}
-
-if(!isMobile()) {
-    // Repeatedly run the 'main' function at the specified FPS
-    setInterval(main, 1000 / FPS);
-} else {
-    canvas.remove();
-    let noMobileCompatMsg = document.createElement("p");
-    noMobileCompatMsg.innerHTML = "This game does not support mobile devices.";
-    document.body.appendChild(noMobileCompatMsg);
-}
+setInterval(main, 1000 / FPS);

@@ -1,5 +1,5 @@
 /** @type {HTMLCanvasElement} */
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementsByTagName("canvas")[0];
 /** @type {CanvasRenderingContext2D} */
 var context = canvas.getContext("2d");
 
