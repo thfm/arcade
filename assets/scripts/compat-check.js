@@ -8,7 +8,7 @@ function isMobile() {
     return false;
 }
 
-if(!isMobile()) {
+if(isMobile()) {
     document.getElementsByTagName("canvas")[0].remove();
     let mobileIncompatMsg = document.createElement("p");
     mobileIncompatMsg.innerHTML =
