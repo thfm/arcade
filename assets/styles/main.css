@@ -25,30 +25,30 @@ body {
 }
 
 .button {
-    margin: 1rem;
+    padding: 0 1rem;
 }
 
-a {
+.button a {
     text-decoration: none;
 }
 
-a * {
+.button a * {
     max-width: 12rem;
 }
 
-a img {
+.button a img {
     width: 12rem;
     height: 9rem;
     border-radius: 1rem;
     transition: transform 200ms ease-out, border-radius 200ms ease-out;
 }
 
-a:hover img {
+.button:hover img {
     transform: scale(1.1);
     border-radius: 0.5rem;
 }
 
-a p {
+.button a p {
     margin: 0;
     padding-top: 0.3rem;
     font-size: 1.3rem;
