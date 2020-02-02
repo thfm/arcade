@@ -14,15 +14,18 @@ html {
 }
 
 body {
-    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.button-container {
+    display: flex;
+}
+
 .button {
-    margin: 0 1.2rem;
+    margin: 1rem;
 }
 
 a {
@@ -47,7 +50,8 @@ a:hover img {
 
 a p {
     margin: 0;
-    font-size: 1.4rem;
+    padding-top: 0.3rem;
+    font-size: 1.3rem;
     text-align: center;
     color: black;
 }
