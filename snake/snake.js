@@ -58,10 +58,7 @@ function drawBoard() {
 // Checks if two positions are equal (both objects are occupying the
 // same grid square)
 function collision(pos1, pos2) {
-    if(pos1[0] == pos2[0] && pos1[1] == pos2[1]) {
-        return true;
-    }
-    return false;
+    return pos1[0] == pos2[0] && pos1[1] == pos2[1];
 }
 
 class Snake {
