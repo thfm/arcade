@@ -5,12 +5,12 @@ let context = canvas.getContext("2d");
 context.font = "bold 40px arial";
 
 const BACK_COLOUR = "black"; // Background colour
- // Foreground colour (used for the net, paddles etc.)
+// Foreground colour (used for the net, paddles etc.)
 const FORE_COLOUR = "white";
 
 const PADDLE_WIDTH = 15;
 const PADDLE_HEIGHT = 150;
- // Gap between the paddles and adjacent walls
+// Gap between the paddles and adjacent walls
 const WALL_GAP = 10;
 
 const BALL_RADIUS = 10;
@@ -106,7 +106,7 @@ class Ball {
 
 function drawNet() {
     let x = (canvas.width / 2) - (NET_WIDTH / 2);
-    for(let i = 0; i <= canvas.height; i += 15) {
+    for (let i = 0; i <= canvas.height; i += 15) {
         drawRect(x, i, NET_WIDTH, 10, FORE_COLOUR);
     }
 }
@@ -128,7 +128,7 @@ let playerScore = 0;
 // Moves the player paddle according to the mouse position.
 // The position of the top of the canvas is subtracted to ensure
 // correct paddle positioning regardless of the page scroll
-canvas.addEventListener("mousemove", function(e) {
+canvas.addEventListener("mousemove", function (e) {
     let canvasTop = canvas.getBoundingClientRect().top;
     player.y = e.clientY - canvasTop - (player.height / 2);
 });
@@ -142,17 +142,17 @@ ball = new Ball(canvas.width / 2, canvas.height / 2, BALL_RADIUS,
 
 function update() {
     ball.move();
-    if(ball.top < 0) {
+    if (ball.top < 0) {
         ball.velocityY = -ball.velocityY;
         // Removes any overlap between the ball and the canvas edge
         // to prevent repeated collisions
-        while(ball.top < 0) {
+        while (ball.top < 0) {
             ball.y += 1;
         }
-    } else if(ball.bottom > canvas.height) {
+    } else if (ball.bottom > canvas.height) {
         ball.velocityY = -ball.velocityY;
         // [See 'while' loop in above 'if' block]
-        while(ball.bottom > canvas.height) {
+        while (ball.bottom > canvas.height) {
             ball.y -= 1;
         }
     }
@@ -164,7 +164,7 @@ function update() {
     // Decides which paddle to detect for collisions with the ball, based on
     // whether it is on the left or right side of the canvas
     let focusPaddle = (ball.x < canvas.width / 2) ? player : computer;
-    if(detectCollision(ball, focusPaddle)) {
+    if (detectCollision(ball, focusPaddle)) {
         let centreOffset = ball.y - focusPaddle.vertCentre;
         // Normalises the centreOffset value to between 0 and 1
         centreOffset = centreOffset / (focusPaddle.height / 2);
@@ -178,10 +178,10 @@ function update() {
         ball.curbSpeed();
     }
 
-    if(ball.left < 0) {
+    if (ball.left < 0) {
         computerScore++;
         ball.reset();
-    } else if(ball.right > canvas.width) {
+    } else if (ball.right > canvas.width) {
         playerScore++;
         ball.reset();
     }
